@@ -4,12 +4,12 @@ public class LunchAccountTester {
       LunchAccount acounttwo = new LunchAccount(35);
 
       System.out.println(acountone.getBalance());
+      System.out.println(acounttwo.getBalance());
+
+      acountone.addBalance(25);
       System.out.println(acountone.getBalance());
 
-      acountone.addBalace(25);
-      System.out.println(acountone.getBalance());
-
-      System.out.println(acounttwo.getId());
+      System.out.println(acountone.getId());
       System.out.println(acounttwo.getId());
     }
   }
