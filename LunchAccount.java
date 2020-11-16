@@ -1,15 +1,15 @@
 public class LunchAccount {
     private String name = "";
     private int balance = 0;
-    private static int userId = 1000;
-    private int id = 1000;
-    private int lunchesSold = 0, lunchTotalCost = 0;
-    private int lunchesBought = 0;
+    private static int userId = 0;
+    private int id;
+    private static int lunchesSold = 0;
+    public int lunchTotalCost = 0;
     private boolean isFirst = false;
 
     public LunchAccount() {
-        this.userId = id;
-        id++;
+        this.id = userId + 1000;
+        this.userId++;
         if (id<1100) {
             this.balance += 20;
             isFirst = true;
@@ -17,9 +17,9 @@ public class LunchAccount {
     }
 
     public LunchAccount(int balance) {
-        this.balance = balance;
-        this.userId = id;
-        id++;
+        this.id = userId + 1000;
+        this.userId++;
+        this.balance += balance;
         if (id<1100) {
             this.balance += 20;
             isFirst = true;
@@ -40,11 +40,15 @@ public class LunchAccount {
 
     public void eatLunch(int cost) {
         this.balance -= cost;
-        lunchesSold++;
-        lunchTotalCost += cost;
+        this.lunchesSold++;
+        this.lunchTotalCost += cost;
     }
 
     public int getId() {
-        return userId;
+        return id;
+    }
+
+    public String toString() {
+        return "Student " + id + " has $" + balance + " in their account. " + lunchesSold + " lunches have been sold at the total cost of $" + lunchTotalCost;
     }
 }

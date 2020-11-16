@@ -1,15 +1,21 @@
 public class LunchAccountTester {
     public static void main( String[] args ) {
-      LunchAccount acountone = new LunchAccount();
-      LunchAccount acounttwo = new LunchAccount(35);
+      LunchAccount accountone = new LunchAccount();
+      LunchAccount accountonee = new LunchAccount();
+      LunchAccount accounttwo = new LunchAccount(35);
 
-      System.out.println(acountone.getBalance());
-      System.out.println(acounttwo.getBalance());
+      System.out.println(accountone.getId());
+      System.out.println(accountonee.getId());
+      System.out.println(accounttwo.getId());
 
-      acountone.addBalance(25);
-      System.out.println(acountone.getBalance());
+      System.out.println(accountone.getBalance());
+      System.out.println(accounttwo.getBalance());
 
-      System.out.println(acountone.getId());
-      System.out.println(acounttwo.getId());
+      accountone.addBalance(25);
+      System.out.println(accountone.getBalance());
+
+      System.out.println(accountone.toString());
+      accountone.eatLunch(13);
+      System.out.println(accountone.toString());
     }
   }
